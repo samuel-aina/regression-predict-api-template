@@ -46,7 +46,7 @@ df.drop(['Precipitation_in_millimeters'], axis = 1, inplace = True)
 df['Temperature'] = df['Temperature'].fillna(df['Temperature'].mean())
 
 
-# Feature engineering
+# Feature Engineering
 
 '''-----Time Conversion-----'''
 df['Pickup_-_Time'] = pd.to_datetime(df['Pickup_-_Time'])
