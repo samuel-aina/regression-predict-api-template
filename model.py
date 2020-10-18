@@ -59,8 +59,16 @@ def _preprocess_data(data):
     # ---------------------------------------------------------------
 
     # ----------- Replace this code with your own preprocessing steps --------
-    predict_vector = feature_vector_df[['Pickup Lat','Pickup Long',
-                                        'Destination Lat','Destination Long']]
+    # predict_vector = feature_vector_df[['Pickup Lat','Pickup Long',
+    #                                     'Destination Lat','Destination Long']]
+    predict_vector = feature_vector_df[['Platform_Type', 'Distance_(KM)', 'Temperature', 'Pickup_Lat',
+                                        'Pickup_Long', 'Destination_Lat', 'Destination_Long', 'No_Of_Orders',
+                                        'Age', 'Average_Rating', 'No_of_Ratings','Time_from_Placement_to_Confirmation',
+                                        'Time_from_Confirmation_to_Arrival_at_Pickup',
+                                        'Time_from_Arrival_at_Pickup_to_Pickup_-_Time', 'Performance',
+                                        'Pickup_Hour', 'Pickup_Minute', 'Pickup_Second', 'Pickup_Hour_sin',
+                                        'Pickup_Hour_cos', 'Pickup_Month_sin', 'Pickup_Month_cos',
+                                        'Pickup_Day_sin', 'Pickup_Day_cos', 'Personal_or_Business_Personal']]
     # ------------------------------------------------------------------------
 
     return predict_vector
