@@ -111,18 +111,11 @@ x_train, x_val, y_train, y_val = train_test_split(finaltrain, y, test_size = 0.3
 #lr.fit(x_train, y_train)
 
 # Fit model
-params = {
-    'n_estimators':[300],
-    'max_depth': [4],
-    'learning_rate': [0.15],
-    'colsample_bylevel':[0.5],
-    'l2_leaf_reg':[6]}
-
-cbr = GridSearchCV(CatBoostRegressor(random_state=50), cv=2,scoring='neg_mean_squared_error', param_grid=params)
+lr = LinearRegression()
 #print ("Training Model...")
-cbrm = cbr.fit(x_train, y_train)
+lm = lr.fit(x_train, y_train)
 
 # Pickle model for use within our API
-save_path = 'team1_sendy_catboost.pkl'
+save_path = 'team1_sendy_simple_lm_regression.pkl'
 print (f"Training completed. Saving model to: {save_path}")
 pickle.dump(cbr, open(save_path,'wb'))
