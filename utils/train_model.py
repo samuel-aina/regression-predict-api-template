@@ -113,9 +113,9 @@ x_train, x_val, y_train, y_val = train_test_split(finaltrain, y, test_size = 0.3
 # Fit model
 lr = LinearRegression()
 #print ("Training Model...")
-lm = lr.fit(x_train, y_train)
+lr.fit(x_train, y_train)
 
 # Pickle model for use within our API
 save_path = 'team1_sendy_simple_lm_regression.pkl'
 print (f"Training completed. Saving model to: {save_path}")
-pickle.dump(cbr, open(save_path,'wb'))
+pickle.dump(lr, open(save_path,'wb'))
